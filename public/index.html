@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BeRésumé - Portfolio</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  </head>
+  <body>
+    <!-- Theme Toggle -->
+    <button id="theme-toggle">🌙</button>
+
+    <header>
+      <div class="logo"><strong>MyPortfolio</strong></div>
+      <nav>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li>
+            <a href="resume.pdf" download class="resume-btn">Download Resume</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <section id="about" class="about">
+      <div class="about-content">
+        <h1
+          style="
+            border-bottom: 1px solid white;
+            border-top: 1px solid white;
+            border-radius: 10px;
+            width: fit-content;
+            padding: 15px;
+          "
+        >
+          Shuhbam Sharma
+        </h1>
+        <h3>Dev</h3>
+        <p>
+          "I am a passionate Computer Science Engineering student specializing
+          in full-stack web development and AI/ML. With hands-on experience in
+          the MERN stack, Python, and cloud-based applications, I am eager to
+          build innovative solutions that solve real-world problems. My goal is
+          to contribute to the field of AI while continuously learning and
+          evolving as a developer."
+        </p>
+        <img
+          src="../assets/images/WhatsApp_Image_2025-02-09_at_20.49.59_46f9b4a6-removebg.png"
+          class="signature"
+          alt="Signature"
+        />
+      </div>
+      <div class="profile-img">
+        <img
+          src="../assets/images/colorful-skull-ai-5120x2880-15999.png"
+          alt="Daniel Petterson"
+        />
+      </div>
+    </section>
+
+    <section id="skills" class="skills">
+      <h2>My Skills</h2>
+      <div class="skill">
+        <span>Python</span>
+        <div class="bar"><div class="fill" data-width="70%"></div></div>
+      </div>
+      <div class="skill">
+        <span>C++</span>
+        <div class="bar"><div class="fill" data-width="60%"></div></div>
+      </div>
+      <div class="skill">
+        <span>JAVA</span>
+        <div class="bar"><div class="fill" data-width="80%"></div></div>
+      </div>
+      <div class="skill">
+        <span>Kotlin</span>
+        <div class="bar"><div class="fill" data-width="90%"></div></div>
+      </div>
+      <div class="skill">
+        <span>Git & GitHub</span>
+        <div class="bar"><div class="fill" data-width="60%"></div></div>
+      </div>
+      <div class="skill">
+        <span>VS Code</span>
+        <div class="bar"><div class="fill" data-width="80%"></div></div>
+      </div>
+    </section>
+
+    <section id="portfolio" class="portfolio">
+      <h2>My Projects</h2>
+      <div class="projects">
+        <div class="project">
+          <img src="assets/images/project1.jpg" alt="Project 1" />
+          <h3>Web Design Project</h3>
+          <p>Modern UI design for a startup.</p>
+          <button class="view-project">View More</button>
+        </div>
+        <div class="project">
+          <img src="assets/images/project2.jpg" alt="Project 2" />
+          <h3>E-commerce Website</h3>
+          <p>Built using MERN stack.</p>
+          <button class="view-project">View More</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <h2>Contact Me</h2>
+      <form id="contact-form">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+
+    <footer>
+      <p>© 2025 Shubham Sharma. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,280 @@
+/* Import Google Font */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap");
+
+:root {
+  --primary-color: #d4af7a;
+  --dark-bg: #222;
+  --light-bg: #fff;
+  --text-dark: #fff;
+  --text-light: #333;
+  --skill-bg: rgba(0, 0, 0, 0.1);
+  --skill-fill: black;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  background: var(--light-bg);
+  color: var(--text-light);
+  transition: background 0.5s, color 0.5s;
+}
+
+/* Theme Toggle */
+#theme-toggle {
+  position: fixed;
+  top: 15px;
+  right: 20px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-size: 24px;
+}
+
+/* Dark Mode */
+.dark-mode {
+  background: var(--dark-bg);
+  color: var(--text-dark);
+}
+
+.dark-mode header {
+  background: #333;
+}
+
+.dark-mode .skills {
+  background: #444;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 50px;
+  background: white;
+  align-items: center;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin: 0 15px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: var(--primary-color);
+}
+
+/* About Section */
+.about {
+  display: flex;
+  padding: 50px;
+  background: var(--dark-bg);
+  color: var(--text-dark);
+  align-items: center;
+  justify-content: space-between;
+}
+
+.about-content {
+  flex: 1;
+  max-width: 50%;
+}
+
+.about-content h1 {
+  font-size: 40px;
+  margin-bottom: 5px;
+}
+
+.about-content h3 {
+  font-size: 20px;
+  font-weight: normal;
+  margin-bottom: 20px;
+  color: var(--primary-color);
+}
+
+.about-content p {
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.signature {
+  width: 150px;
+  margin-top: 15px;
+}
+
+.profile-img img {
+  width: 350px; /* Adjust size as needed */
+  height: 350px; /* Must be equal to width */
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Skills Section */
+.skills {
+  background: var(--primary-color);
+  padding: 50px;
+  text-align: center;
+}
+
+.skills h2 {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.skill {
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+  margin: 10px auto;
+  align-items: center;
+}
+
+.skill span {
+  flex: 1;
+  text-align: left;
+  font-weight: bold;
+}
+
+.bar {
+  flex: 3;
+  height: 10px;
+  background: var(--skill-bg);
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+}
+
+.fill {
+  height: 100%;
+  background: var(--skill-fill);
+  width: 0;
+  border-radius: 5px;
+  transition: width 2s ease-in-out;
+}
+
+/* Portfolio Section */
+.portfolio {
+  padding: 50px;
+  text-align: center;
+}
+
+.projects {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.project {
+  background: white;
+  padding: 15px;
+  width: 300px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.project img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.project:hover {
+  transform: scale(1.05);
+}
+
+/* Contact Section */
+.contact {
+  padding: 50px;
+  text-align: center;
+  background: var(--primary-color);
+}
+
+.contact form {
+  width: 50%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact input,
+.contact textarea {
+  padding: 10px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+}
+
+.contact button {
+  background: black;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+}
+
+.contact button:hover {
+  background: var(--text-light);
+}
+
+/* Footer */
+footer {
+  padding: 20px;
+  text-align: center;
+  background: #222;
+  color: white;
+  font-size: 14px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-content {
+    max-width: 100%;
+  }
+
+  .profile-img img {
+    width: 200px;
+  }
+
+  .skills {
+    padding: 30px;
+  }
+
+  .skill {
+    width: 80%;
+  }
+
+  .contact form {
+    width: 80%;
+  }
+}
