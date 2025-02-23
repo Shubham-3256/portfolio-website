@@ -8,9 +8,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   </head>
   <body>
-    <!-- Theme Toggle -->
-    <button id="theme-toggle">🌙</button>
-
     <header>
       <div class="logo"><strong>MyPortfolio</strong></div>
       <nav>
@@ -20,7 +17,11 @@
           <li><a href="#portfolio">Portfolio</a></li>
           <li><a href="#contact">Contact</a></li>
           <li>
-            <a href="resume.pdf" download>Download Resume</a>
+            <a
+              href="/portfolio-website/assets/resume/resume.pdf"
+              download="resume"
+              >Download Resume</a
+            >
           </li>
         </ul>
       </nav>
@@ -28,18 +29,8 @@
 
     <section id="about" class="about">
       <div class="about-content">
-        <h1
-          style="
-            border-bottom: 1px solid white;
-            border-top: 1px solid white;
-            border-radius: 10px;
-            width: fit-content;
-            padding: 15px;
-          "
-        >
-          Shuhbam Sharma
-        </h1>
-        <h3>Dev</h3>
+        <h1 class="about-title">Shubham Sharma</h1>
+        <h3>Full-Stack Developer</h3>
         <p>
           "I am a passionate Computer Science Engineering student specializing
           in full-stack web development and AI/ML. With hands-on experience in
@@ -49,15 +40,15 @@
           evolving as a developer."
         </p>
         <img
-          src="WhatsApp_Image_2025-02-09_at_20.49.59_46f9b4a6-removebg.png"
+          src="/portfolio-website/assets/images/signature.png"
           class="signature"
-          alt="Signature"
+          alt="Shubham Sharma Signature"
         />
       </div>
       <div class="profile-img">
         <img
-          src="colorful-skull-ai-5120x2880-15999.png"
-          alt="Daniel Petterson"
+          src="/portfolio-website/assets/images/profile.png"
+          alt="Shubham Sharma Profile"
         />
       </div>
     </section>
@@ -73,7 +64,7 @@
         <div class="bar"><div class="fill" data-width="60%"></div></div>
       </div>
       <div class="skill">
-        <span>JAVA</span>
+        <span>Java</span>
         <div class="bar"><div class="fill" data-width="80%"></div></div>
       </div>
       <div class="skill">
@@ -94,15 +85,21 @@
       <h2>My Projects</h2>
       <div class="projects">
         <div class="project">
-          <img src="assets/images/project1.jpg" alt="Project 1" />
+          <img
+            src="/portfolio-website/assets/images/profile.png"
+            alt="Web Design Project"
+          />
           <h3>Web Design Project</h3>
           <p>Modern UI design for a startup.</p>
           <button class="view-project">View More</button>
         </div>
         <div class="project">
-          <img src="assets/images/project2.jpg" alt="Project 2" />
+          <img
+            src="/portfolio-website/assets/images/profile.png"
+            alt="E-commerce Website"
+          />
           <h3>E-commerce Website</h3>
-          <p>Built using MERN stack.</p>
+          <p>Built using the MERN stack.</p>
           <button class="view-project">View More</button>
         </div>
       </div>

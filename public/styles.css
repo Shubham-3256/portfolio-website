@@ -2,47 +2,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap");
 
 :root {
-  --primary-color: #d4af7a;
-  --dark-bg: #222;
-  --light-bg: #fff;
-  --text-dark: #fff;
-  --text-light: #333;
-  --skill-bg: rgba(0, 0, 0, 0.1);
-  --skill-fill: black;
+  --primary-color: #00adb5; /* Accent color */
+  --background: #222831; /* Page background */
+  --secondary-bg: #393e46; /* Section background */
+  --text-color: #eeeeee; /* Text color */
+  --skill-bg: rgba(238, 238, 238, 0.1);
+  --skill-fill: #00adb5;
+  --button-text: #000000; /* Button text for contrast */
 }
 
 body {
   font-family: "Poppins", sans-serif;
   margin: 0;
   padding: 0;
-  background: var(--light-bg);
-  color: var(--text-light);
-  transition: background 0.5s, color 0.5s;
-}
-
-/* Theme Toggle */
-#theme-toggle {
-  position: fixed;
-  top: 15px;
-  right: 20px;
-  cursor: pointer;
-  background: none;
-  border: none;
-  font-size: 24px;
-}
-
-/* Dark Mode */
-.dark-mode {
-  background: var(--dark-bg);
-  color: var(--text-dark);
-}
-
-.dark-mode header {
-  background: #333;
-}
-
-.dark-mode .skills {
-  background: #444;
+  background: var(--background);
+  color: var(--text-color);
+  transition: background 0.5s ease, color 0.5s ease;
 }
 
 /* Header */
@@ -50,9 +25,10 @@ header {
   display: flex;
   justify-content: space-between;
   padding: 20px 50px;
-  background: white;
+  background: var(--primary-color);
   align-items: center;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s ease;
 }
 
 .logo {
@@ -64,34 +40,37 @@ nav ul {
   list-style: none;
   padding: 0;
   margin: 0;
+  display: flex;
 }
 
 nav ul li {
-  display: inline;
   margin: 0 15px;
 }
 
 nav ul li a {
   text-decoration: none;
-  color: black;
+  color: var(--background);
   font-weight: 500;
-  transition: color 0.3s;
+  transition: color 0.3s ease, transform 0.2s ease;
 }
 
 nav ul li a:hover {
-  color: var(--primary-color);
+  color: var(--text-color);
+  transform: scale(1.1);
 }
 
 /* About Section */
 .about {
   display: flex;
+  flex-wrap: wrap;
   padding: 50px;
-  background: var(--dark-bg);
-  color: var(--text-dark);
+  background: var(--background);
+  color: var(--text-color);
   align-items: center;
   justify-content: space-between;
 }
 
+/* About Content (Text) */
 .about-content {
   flex: 1;
   max-width: 50%;
@@ -114,23 +93,38 @@ nav ul li a:hover {
   margin-bottom: 15px;
 }
 
-.signature {
-  width: 150px;
-  margin-top: 15px;
+/* Profile Image Section (Right-Aligned) */
+.profile-img {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end; /* Align to right */
+  align-items: center;
+  text-align: center;
 }
 
+/* Profile Image */
 .profile-img img {
-  width: 350px; /* Adjust size as needed */
-  height: 350px; /* Must be equal to width */
-  border-radius: 50%;
-  object-fit: cover;
+  width: 100%;
+  max-width: 250px; /* Ensures it’s not too large */
+  height: 250px; /* Make sure width & height are equal */
+  border-radius: 50%; /* Makes it circular */
+  object-fit: cover; /* Ensures it doesn't stretch */
+  border: 5px solid var(--primary-color); /* Optional: Adds a border */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Optional: Soft shadow effect */
+}
+
+/* Signature Image */
+.signature {
+  max-width: 150px;
+  height: auto;
 }
 
 /* Skills Section */
 .skills {
-  background: var(--primary-color);
+  background: var(--secondary-bg);
   padding: 50px;
   text-align: center;
+  color: var(--text-color);
 }
 
 .skills h2 {
@@ -183,22 +177,24 @@ nav ul li a:hover {
 }
 
 .project {
-  background: white;
-  padding: 15px;
-  width: 300px;
+  background: var(--secondary-bg);
+  padding: 20px;
+  width: 320px;
   text-align: center;
   border-radius: 10px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+  box-shadow: 0px 4px 12px rgba(84, 28, 28, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project img {
   width: 100%;
+  height: auto;
   border-radius: 5px;
 }
 
 .project:hover {
   transform: scale(1.05);
+  box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.2);
 }
 
 /* Contact Section */
@@ -218,31 +214,54 @@ nav ul li a:hover {
 
 .contact input,
 .contact textarea {
-  padding: 10px;
-  border: none;
+  padding: 12px;
+  border: 2px solid transparent;
   outline: none;
-  border-radius: 5px;
+  border-radius: 8px;
+  transition: border 0.3s ease;
+}
+
+.contact input:focus,
+.contact textarea:focus {
+  border-color: var(--background);
 }
 
 .contact button {
-  background: black;
-  color: white;
-  padding: 10px;
+  background: var(--background);
+  color: var(--text-color);
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: 600;
   cursor: pointer;
-  border: none;
-  border-radius: 5px;
+  border: 2px solid var(--primary-color);
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: inline-block;
+  box-shadow: 0px 4px 8px rgba(0, 173, 181, 0.2);
 }
 
+/* Hover Effect */
 .contact button:hover {
-  background: var(--text-light);
+  background: var(--button-text);
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0px 5px 15px rgba(0, 173, 181, 0.4);
+}
+
+/* Click (Active) Effect */
+.contact button:active {
+  transform: scale(0.95);
+  box-shadow: 0px 2px 10px rgba(0, 173, 181, 0.3);
 }
 
 /* Footer */
 footer {
   padding: 20px;
   text-align: center;
-  background: #222;
-  color: white;
+  background: var(--background);
+  color: var(--text-color);
   font-size: 14px;
 }
 
@@ -253,8 +272,12 @@ footer {
     text-align: center;
   }
 
-  .about {
+  nav ul {
     flex-direction: column;
+  }
+
+  .about {
+    flex-direction: column; /* Stack content on small screens */
     text-align: center;
   }
 
@@ -262,8 +285,12 @@ footer {
     max-width: 100%;
   }
 
+  .profile-img {
+    justify-content: center; /* Center image on smaller screens */
+  }
+
   .profile-img img {
-    width: 200px;
+    max-width: 200px; /* Reduce size for better fit */
   }
 
   .skills {
@@ -277,4 +304,48 @@ footer {
   .contact form {
     width: 80%;
   }
+
+  .projects {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .project {
+    width: 90%;
+  }
+}
+
+/* View More Button */
+.view-project {
+  background: var(--primary-color);
+  color: var(--button-text);
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: inline-block;
+  box-shadow: 0px 4px 8px rgba(0, 173, 181, 0.2);
+}
+
+/* Hover Effect */
+.view-project:hover {
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-bg)
+  );
+  color: var(--text-color);
+  transform: translateY(-3px);
+  box-shadow: 0px 0px 15px rgba(0, 173, 181, 0.8); /* Stronger glow effect */
+}
+
+/* Click Effect */
+.view-project:active {
+  transform: scale(0.95);
+  box-shadow: 0px 2px 10px rgba(0, 173, 181, 0.3);
 }
